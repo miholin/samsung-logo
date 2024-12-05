@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+.telefon {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    /* Telefon je nekoliko premaknjen levo */
+    width: 100%;
+    height: 100%;
+}
+
+.telefon_svg {
+    position: relative;
+    right: 20%;
+}
+
+.svg-container {
+    position: relative;
+    top: 10px;
+    /* Ohranja logotip na vrhu telefona */
+    left: 35%;
+    z-index: 1;
+    /* Postavi logotip nad telefon */
+}
+
+#logoSVG {
+    width: 100px;
+}
+
+.color-picker {
+    margin-top: 80px;
+}
+
+input[type="color"] {
+    width: 150px;
+    /* Ustrezna širina */
+    height: 40px;
+    /* Manjša višina */
+    border: 2px solid #ccc;
+    /* Rob za bolj definiran izgled */
+    border-radius: 15px;
+    /* Zaobljeni robovi */
+    cursor: pointer;
+    /* Omogoča klik */
+    box-shadow: none;
+    /* Odstranjena senca, da ne blokira klika */
+}
+
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    overflow: hidden;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    /* To bo poravnalo vse elemente v sredino */
+    align-items: center;
+    /* Poravna elemente navpično */
+    height: 80px;
+    /* Določi višino menija, če še ni nastavljena */
+}
+
+.topnav a {
+    float: left;
+    /* Aligns the links side by side */
+    display: block;
+    /* Makes the links appear as block elements */
+    color: white;
+    /* Text color */
+    text-align: center;
+    /* Centers the text inside the links */
+    padding: 14px 16px;
+    /* Adds some space inside the links */
+    text-decoration: none;
+    /* Removes the underline from the text */
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    /* Background color when hovered */
+    color: black;
+    /* Text color when hovered */
+}
+
+.topnav a.active {
+    background-color: #04aa6d;
+    /* Active link background color */
+    color: white;
+    /* Active link text color */
+}
+
+.topnav .logo img {
+    vertical-align: middle;
+    /* To poravna sliko vertikalno na sredino */
+    height: 60px;
+    /* Določi višino logotipa, da je v skladu z višinami menija */
+}
