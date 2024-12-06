@@ -1,66 +1,40 @@
 <!DOCTYPE html>
 <html lang="sl">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spreminjanje barve SVG z drsnikom</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
+</head>
 
-  <body>
-    <div class="topnav">
-      <a href="#home" class="logo">
-        <img src="Slike/samsung-logo.png" alt="Samsung Logo" />
-      </a>
-    </div> 
+<body>
+    <nav class="topnav">
+        <a href="#home" class="logo">
+            <img src="Slike/samsung-logo.png" alt="Samsung Logo" />
+        </a>
+        <a href="#">Novice</a>
+        <a href="#">Kontakt</a>
+    </nav>
+
     <div class="container">
-
-      <h1>Spremenite barvo SVG</h1>
-      <div class="telefon">
-        <svg
-          class="telefon_svg"
-          xmlns="http://www.w3.org/2000/svg"
-          width="600px"
-          height="600px"
-          viewBox="0 0 450 360"
-        >
-          <path
-            id="Neimenovano"
-            fill="none"
-            stroke="black"
-            stroke-width="1"
-            d="M 355.50,47.75
-           C 358.82,48.18 367.01,56.52 365.67,58.33
-             365.67,58.33 366.00,301.00 366.00,301.00
-             367.30,303.51 359.07,313.07 358.00,311.00
-             358.11,311.48 257.10,312.52 248.67,310.00
-             246.50,310.47 240.22,302.35 240.33,298.33
-             240.21,294.11 240.00,71.67 239.67,61.33
-             239.33,51.00 252.31,47.38 252.31,47.38
-             252.31,47.38 355.50,47.75 355.50,47.75 Z
-           M 239.62,132.25
-           C 239.62,132.25 266.62,132.25 266.62,132.25
-             268.30,132.76 274.65,128.97 273.53,128.62
-             275.42,128.41 276.31,121.48 276.16,121.50
-             276.16,121.50 275.95,47.44 275.95,47.44M 249.50,115.38
-           C 251.22,99.50 270.24,104.61 269.12,114.88
-             269.12,125.12 248.75,128.25 249.50,115.38 Z
-           M 249.75,91.00
-           C 250.34,76.39 269.47,79.64 269.38,91.25
-             269.91,101.21 249.93,105.15 249.75,91.00 Z
-           M 249.25,66.62
-           C 249.53,55.07 268.49,52.07 268.12,67.12
-             268.49,77.65 249.68,79.09 249.25,66.62 Z"
-          />
-        </svg>
-      </div>
-      <div class="svg-container">
-        <svg
+        <h1>Spremenite barvo SVG</h1>
+        
+        <div class="telefon">
+            <!-- Phone SVG remains static, no scaling -->
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+              <title>_</title>
+              <g>
+                <path d="M85.81,120H34.19a8.39,8.39,0,0,1-8.38-8.39V8.39A8.39,8.39,0,0,1,34.19,0H85.81a8.39,8.39,0,0,1,8.38,8.39V111.61A8.39,8.39,0,0,1,85.81,120ZM34.19,3.87a4.52,4.52,0,0,0-4.51,4.52V111.61a4.52,4.52,0,0,0,4.51,4.52H85.81a4.52,4.52,0,0,0,4.51-4.52V8.39a4.52,4.52,0,0,0-4.51-4.52Z"/>
+                <polygon points="73.7 10.32 46.3 10.32 39.28 3.3 42.01 0.57 47.9 6.45 72.1 6.45 77.99 0.57 80.72 3.3 73.7 10.32"/>
+                <rect x="47.1" y="103.23" width="25.81" height="3.87"/>
+              </g>
+            </svg>
+            
+            <!-- Samsung Logo SVG inside the phone, centered -->
+            <svg
           id="logoSVG"
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
-          width="500px"
-          height="500px"
           viewBox="0 0 4000.000000 2400.000000"
           preserveAspectRatio="xMidYMid meet"
         >
@@ -179,13 +153,27 @@
             />
           </g>
         </svg>
-      </div>
-      <div class="color-picker">
-        <label>Izberite barvo:</label>
-        <input name="colorSlider" type="color" id="colorSlider" value="#ff0000" />
-      </div>
+        </div>
+        
+        <div class="color-picker">
+            <label>Izberite barvo:</label>
+            <input name="colorSlider" type="color" id="colorSlider" value="#ff0000" />
+        </div>
+
+        <div>
+            <h1 id="kdoSmo">Kdo smo mi?</h1>
+            <p id="glavniTekst">
+                Skupina Samsung (Hangul: 삼성 그룹; hanja: 三星 그룹; Korejska izgovorjava: [sam.sʌŋ ɡɯ'ɾup̚]) je ...
+            </p>
+        </div>
     </div>
 
     <script src="main.js"></script>
-  </body>
+    <script src="samsung_logo_canvas.js"></script>
+</body>
+
+<footer>
+    <canvas id="artCanvas"></canvas>
+</footer>
+
 </html>
