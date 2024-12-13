@@ -1,37 +1,111 @@
 <!DOCTYPE html>
 <html lang="sl">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spreminjanje barve SVG z drsnikom</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="topnav">
-        <a href="#home" class="logo">
-            <img src="Slike/samsung-logo.png" alt="Samsung Logo" />
-        </a>
-        <a href="#">Novice</a>
-        <a href="#">Kontakt</a>
+      <a href="#home" class="logo">
+        <img src="Slike/samsung-logo.png" alt="Samsung Logo" />
+      </a>
+      <a href="#">Novice</a>
+      <a href="#">Kontakt</a>
     </nav>
 
     <div class="container">
-        <h1>Spremenite barvo SVG</h1>
-        
-        <div class="telefon">
-            <!-- Phone SVG remains static, no scaling -->
-            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-              <title>_</title>
-              <g>
-                <path d="M85.81,120H34.19a8.39,8.39,0,0,1-8.38-8.39V8.39A8.39,8.39,0,0,1,34.19,0H85.81a8.39,8.39,0,0,1,8.38,8.39V111.61A8.39,8.39,0,0,1,85.81,120ZM34.19,3.87a4.52,4.52,0,0,0-4.51,4.52V111.61a4.52,4.52,0,0,0,4.51,4.52H85.81a4.52,4.52,0,0,0,4.51-4.52V8.39a4.52,4.52,0,0,0-4.51-4.52Z"/>
-                <polygon points="73.7 10.32 46.3 10.32 39.28 3.3 42.01 0.57 47.9 6.45 72.1 6.45 77.99 0.57 80.72 3.3 73.7 10.32"/>
-                <rect x="47.1" y="103.23" width="25.81" height="3.87"/>
-              </g>
-            </svg>
-            
-            <!-- Samsung Logo SVG inside the phone, centered -->
-            <svg
+      <h1>Spremenite barvo SVG</h1>
+
+      <div class="telefon">
+        <!-- Phone SVG remains static, no scaling -->
+        <svg
+          version="1.1"
+          id="Слой_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 650 650"
+          style="enable-background: new 0 0 650 650"
+          xml:space="preserve"
+        >
+          <style type="text/css">
+            .st0 {
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              fill: #d9d9d9;
+            }
+            .st1 {
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              fill: #2e2f2f;
+            }
+            .st2 {
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              fill: #ffffff;
+            }
+            .st3 {
+              fill: #2e2f2f;
+            }
+            .st4 {
+              fill: #d9d9d9;
+            }
+          </style>
+          <path
+            class="st0"
+            d="M409.5,80.5H238.7c-18,0-32.5,14.5-32.5,32.5v424.1c0,17.9,14.5,32.5,32.5,32.5h170.8c18,0,32.5-14.6,32.5-32.5
+	V113C442,95,427.4,80.5,409.5,80.5z M439.2,538.6c0,16.3-13.2,29.5-29.5,29.5H238.4c-16.3,0-29.5-13.2-29.5-29.5V112.8
+	c0-16.3,13.2-29.5,29.5-29.5h171.4c16.3,0,29.5,13.2,29.5,29.5V538.6z"
+          />
+          <path
+            class="st1"
+            d="M409.8,83.3H238.4c-16.3,0-29.5,13.2-29.5,29.5v425.8c0,16.3,13.2,29.5,29.5,29.5h171.4
+	c16.3,0,29.5-13.2,29.5-29.5V112.8C439.2,96.5,426,83.3,409.8,83.3z M438.2,538.6c0,15.7-12.8,28.5-28.5,28.5H238.4
+	c-15.7,0-28.5-12.8-28.5-28.5V112.8c0-15.7,12.8-28.5,28.5-28.5h171.4c15.7,0,28.5,12.8,28.5,28.5V538.6z"
+          />
+          <path
+            class="st0"
+            d="M409.8,84.3H238.4c-15.7,0-28.5,12.8-28.5,28.5v425.8c0,15.7,12.8,28.5,28.5,28.5h171.4
+	c15.7,0,28.5-12.8,28.5-28.5V112.8C438.2,97,425.5,84.3,409.8,84.3z M433,536.7c0,13.5-11,24.5-24.5,24.5H239.6
+	c-13.5,0-24.5-11-24.5-24.5V114.1c0-13.5,11-24.5,24.5-24.5h168.9c13.5,0,24.5,11,24.5,24.5V536.7z"
+          />
+          <path
+            class="st1"
+            d="M408.5,89.6H239.6c-13.5,0-24.5,11-24.5,24.5v422.6c0,13.5,11,24.5,24.5,24.5h168.9c13.5,0,24.5-11,24.5-24.5
+	V114.1C433,100.6,422,89.6,408.5,89.6z M432,536.7c0,13-10.5,23.5-23.5,23.5H239.6c-13,0-23.5-10.5-23.5-23.5V114.1
+	c0-13,10.5-23.5,23.5-23.5h168.9c13,0,23.5,10.5,23.5,23.5V536.7z"
+          />
+          <path
+            class="st2"
+            d="M408.5,90.6H239.6c-13,0-23.5,10.5-23.5,23.5v422.6c0,13,10.5,23.5,23.5,23.5h168.9c13,0,23.5-10.5,23.5-23.5
+	V114.1C432,101.1,421.5,90.6,408.5,90.6z M324,106.6c-3.5,0-6.3-2.8-6.3-6.3s2.8-6.3,6.3-6.3s6.3,2.8,6.3,6.3S327.5,106.6,324,106.6
+	z"
+          />
+          <path
+            class="st1"
+            d="M443.5,291.1l-0.5-0.3v-23.5l0.4-0.2c0.8-0.4,1.4-1.3,1.4-2.2v-60.6c0-0.9-0.5-1.8-1.4-2.2l-0.4-0.2v-89
+	c0-18.5-15-33.5-33.5-33.5H238.7c-18.5,0-33.5,15-33.5,33.5V537c0,18.5,15,33.5,33.5,33.5h170.8c18.5,0,33.5-15,33.5-33.5V326.1
+	l0.5-0.3c0.8-0.4,1.4-1.3,1.4-2.2v-30.3C444.9,292.4,444.2,291.6,443.5,291.1z M443,203.1c0.5,0.3,0.8,0.8,0.8,1.3V265
+	c0,0.5-0.3,1-0.8,1.3V203.1z M442,537.1c0,17.9-14.5,32.5-32.5,32.5H238.7c-18,0-32.5-14.6-32.5-32.5V113c0-18,14.5-32.5,32.5-32.5
+	h170.8c18,0,32.5,14.5,32.5,32.5V537.1z M443.9,323.7c0,0.6-0.3,1.1-0.8,1.3H443v-33.1h0.1c0.5,0.3,0.8,0.8,0.8,1.3V323.7z"
+          />
+          <path
+            class="st3"
+            d="M324,94.1c-3.5,0-6.3,2.8-6.3,6.3s2.8,6.3,6.3,6.3s6.3-2.8,6.3-6.3S327.5,94.1,324,94.1z M324,105.6
+	c-2.9,0-5.3-2.4-5.3-5.3s2.4-5.3,5.3-5.3s5.3,2.4,5.3,5.3C329.4,103.3,327,105.6,324,105.6z"
+          />
+          <path
+            class="st4"
+            d="M329.4,100.3c0,2.9-2.4,5.3-5.3,5.3s-5.3-2.4-5.3-5.3s2.4-5.3,5.3-5.3C327,95.1,329.4,97.4,329.4,100.3z"
+          />
+        </svg>
+
+        <!-- Samsung Logo SVG inside the phone, centered -->
+        <svg
           id="logoSVG"
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
@@ -153,27 +227,34 @@
             />
           </g>
         </svg>
-        </div>
-        
-        <div class="color-picker">
-            <label>Izberite barvo:</label>
-            <input name="colorSlider" type="color" id="colorSlider" value="#ff0000" />
-        </div>
+      </div>
 
-        <div>
-            <h1 id="kdoSmo">Kdo smo mi?</h1>
-            <p id="glavniTekst">
-                Skupina Samsung (Hangul: 삼성 그룹; hanja: 三星 그룹; Korejska izgovorjava: [sam.sʌŋ ɡɯ'ɾup̚]) je ...
-            </p>
-        </div>
+      <div class="color-picker">
+        <label>Izberite barvo:</label>
+        <input
+          name="colorSlider"
+          type="color"
+          id="colorSlider"
+          value="#ff0000"
+        />
+      </div>
+
+      <div>
+        <h1 id="kdoSmo">Kdo smo mi?</h1>
+        <p id="glavniTekst">
+          Skupina Samsung (Hangul: 삼성 그룹; hanja: 三星 그룹; Korejska
+          izgovorjava: [sam.sʌŋ ɡɯ'ɾup̚]) je ...
+        </p>
+      </div>
     </div>
 
     <script src="main.js"></script>
-    <script src="samsung_logo_canvas.js"></script>
-</body>
+  </body>
 
-<footer>
-    <canvas id="artCanvas"></canvas>
-</footer>
-
+  <footer>
+    <div class="canvasdiv">
+      <canvas id="artCanvas"></canvas>
+      <script src="samsung_logo_canvas.js"></script>
+    </div>
+  </footer>
 </html>

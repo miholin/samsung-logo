@@ -1,17 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+
     const canvas = document.getElementById('artCanvas');
     const ctx = canvas.getContext('2d');
-
-    var SVGIcons = {
-        "samsung-logo.svg": {
-         draw: function(ctx){
-        ctx.save();
         ctx.strokeStyle="rgba(0,0,0,0)";
         ctx.miterLimit=4;
         ctx.font="15px ''";
         ctx.font="   15px ''";
-        ctx.scale(0.015000000000000003,0.015000000000000003);
-        ctx.scale(1.3333333333333333,1.3333333333333333);
+        ctx.scale(0.05,0.05);
+        ctx.scale(1.3,1.3);
         ctx.save();
         ctx.strokeStyle="rgba(0,0,0,0)";
         ctx.font="   15px ''";
@@ -386,13 +381,3 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.fill();
         ctx.stroke();
         ctx.restore();
-        ctx.restore();
-        ctx.restore();
-        }
-        
-        }}
-        for(var name in SVGIcons){
-                    Q.registerImage(name, SVGIcons[name]);
-                }
-});
-
