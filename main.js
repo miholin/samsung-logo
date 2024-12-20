@@ -9,3 +9,11 @@ colorSlider.addEventListener("input", (event) => {
     path.setAttribute("fill", newColor); // Update fill color of each path
   });
 });
+
+document.querySelector('.burger-menu').addEventListener('click', () => {
+  const menuLinks = document.querySelectorAll('.topnav a:not(.logo)'); // Vsi meniji razen logotipa
+  menuLinks.forEach(link => {
+    link.style.display = link.style.display === 'block' ? 'none' : 'block';
+  });
+});
+
