@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById('artCanvas');
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = "white";

@@ -5,7 +5,6 @@
     font-style: normal;
 }
 
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +17,6 @@ body {
     background: url(Slike/bg.png) no-repeat center center fixed;
     background-size: cover;
     min-height: 100%;
-    /* Poskrbi za polno višino */
     display: flex;
     flex-direction: column;
 }
@@ -74,7 +72,7 @@ footer+div {
     font-family: 'SamsungSans', sans-serif;
 }
 
-.color-picker-telefon2{
+.color-picker-telefon2 {
     margin-bottom: 5px;
 }
 
@@ -125,13 +123,19 @@ input[type="color"] {
     border-right: none;
 }
 
-#glavniTekst {
+.glavniTekst {
     padding-bottom: 30px;
     text-align: center;
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
     color: white;
+    font-family: 'SamsungSans', sans-serif;
+}
+
+.glavniTekst li {
+    list-style-type: none;
+    padding: 2px;
     font-family: 'SamsungSans', sans-serif;
 }
 
@@ -148,18 +152,13 @@ a {
 
 footer {
     background-color: black;
-    /* Nastavi črno ozadje */
     color: white;
-    /* Poskrbi za berljivost besedila na črnem ozadju */
     text-align: center;
     padding: 20px;
     margin-top: 40px;
     width: 100%;
-    /* Poskrbi, da se razteza čez celotno širino */
     min-height: 50px;
-    /* Zagotovi minimalno višino */
     box-sizing: border-box;
-    /* Upošteva padding v dimenzijah */
 }
 
 .footer-container {
@@ -177,8 +176,8 @@ footer .canvasdiv {
 }
 
 #canvas {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     background-color: #ffffff;
 }
 
@@ -234,11 +233,14 @@ footer img {
         color: black;
         border: none;
     }
+
+    footer .canvasdiv {
+        margin-left: 50px;
+    }
 }
 
 .st0 {
     fill: white;
-    /* Začetna svetlo siva barva */
 }
 
 .st1,
@@ -246,7 +248,7 @@ footer img {
 .st3,
 .st4 {
     fill: white;
-    /* Vaša začetna barva za druge elemente */
+    /* začetna barva za druge elemente */
 }
 
 
