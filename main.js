@@ -95,8 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       // SweetAlert2 => Swal.fire(...)
       Swal.fire({
-        title: "Moja Vizitka",
-        text: "Matjaž Novosel\nEmail: matjaz@example.com\nTelefon: +386 40 123 456",
+        title: "Vizitka",
+        text: "Miha Sever\nERŠ 4.RB",
         icon: "info",
         confirmButtonText: "Zapri",
       });
