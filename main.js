@@ -1,89 +1,105 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // 1. Elementi in konstante
   const colorSlider = document.getElementById("colorSlider");
   const logoSVG = document.getElementById("logoSVG");
   const logoPaths = logoSVG ? logoSVG.querySelectorAll("path") : [];
 
   const colorSliderTelefon = document.getElementById("color-picker-telefon");
   const telefonSVG = document.getElementById("telefon");
-  const telefonPaths = telefonSVG ? telefonSVG.querySelectorAll("path") : [];
 
-  // Funkcija za posodobitev barve
+  // Vseh g z id="main-body" je lahko več; zberemo vse <path> v njih
+  const mainBodyPaths = telefonSVG
+    ? telefonSVG.querySelectorAll("#main-body path")
+    : [];
+
+  // 2. Funkcija za posodobitev barve
   function updateColor(paths, newColor) {
     paths.forEach((path) => {
-      path.style.fill = newColor; // Posodobi stil 'fill' atribut za vsak path
-      console.log("Updated path:", path, "New fill:", newColor);
-      if (newColor === "#ffffff" || newColor === "rgb(255, 255, 255)") {
-        path.setAttribute("fill", newColor); // Dodatno preverjanje za belo barvo
-      }
+      path.style.fill = newColor;
+      path.style.fillOpacity = "1"; 
     });
   }
 
-  // Ponastavitev barv ob nalaganju strani
+  // 3. resetColors() – ob nalaganju
   function resetColors() {
+    // Pobarvamo SAMO main-body v belo
+    if (mainBodyPaths.length > 0) {
+      updateColor(mainBodyPaths, "#ffffff");
+    }
+
+    // Nastavimo logotip na modro (ali vašo barvo)
     if (colorSlider) {
-      colorSlider.value = "#0032A0"; // Privzeta barva logotipa
+      colorSlider.value = "#0032A0";
       if (logoPaths.length > 0) {
         updateColor(logoPaths, "#0032A0");
       }
     }
+
+    // Nastavimo privzeto barvo izbirnika telefona
     if (colorSliderTelefon) {
-      colorSliderTelefon.value = "#ffffff"; // Privzeta bela barva za telefon
-      if (telefonPaths.length > 0) {
-        updateColor(telefonPaths, "#ffffff");
-      }
+      colorSliderTelefon.value = "#ffffff";
     }
   }
 
-  // Ponastavi barve ob nalaganju strani
+  // 4. Ob nalaganju pokličemo resetColors
   resetColors();
 
-  // Sprememba barve logotipa
+  // 5. Dogodki – barvanje logotipa
   if (colorSlider) {
     colorSlider.addEventListener("input", (event) => {
-      const newColor = event.target.value; // Pridobi izbrano barvo
-      console.log("New color for logo:", newColor);
+      const newColor = event.target.value;
       if (logoPaths.length > 0) {
         updateColor(logoPaths, newColor);
       }
     });
-
     colorSlider.addEventListener("change", (event) => {
-      const newColor = event.target.value; // Pridobi izbrano barvo
-      console.log("New color for logo on change:", newColor);
+      const newColor = event.target.value;
       if (logoPaths.length > 0) {
         updateColor(logoPaths, newColor);
       }
     });
   }
 
-  // Sprememba barve telefona
+  // 6. Dogodki – barvanje SAMO main-body telefona
   if (colorSliderTelefon) {
     colorSliderTelefon.addEventListener("input", (event) => {
-      const newColor = event.target.value; // Pridobi izbrano barvo
-      console.log("New color for telefon:", newColor);
-      if (telefonPaths.length > 0) {
-        updateColor(telefonPaths, newColor);
+      const newColor = event.target.value;
+      if (mainBodyPaths.length > 0) {
+        updateColor(mainBodyPaths, newColor);
       }
     });
-
     colorSliderTelefon.addEventListener("change", (event) => {
-      const newColor = event.target.value; // Pridobi izbrano barvo
-      console.log("New color for telefon on change:", newColor);
-      if (telefonPaths.length > 0) {
-        updateColor(telefonPaths, newColor);
+      const newColor = event.target.value;
+      if (mainBodyPaths.length > 0) {
+        updateColor(mainBodyPaths, newColor);
       }
     });
   }
-});
 
+  // 7. Burger menu
+  const burgerBtn = document.querySelector(".burger-menu");
+  if (burgerBtn) {
+    burgerBtn.addEventListener("click", () => {
+      const menuLinks = document.querySelectorAll(".topnav a:not(.logo)");
+      menuLinks.forEach((link) => {
+        link.style.display =
+          link.style.display === "block" ? "none" : "block";
+      });
+    });
+  }
 
-
-
-
-
-document.querySelector('.burger-menu').addEventListener('click', () => {
-  const menuLinks = document.querySelectorAll('.topnav a:not(.logo)'); // Vsi meniji razen logotipa
-  menuLinks.forEach(link => {
-    link.style.display = link.style.display === 'block' ? 'none' : 'block';
-  });
+  // 8. Gumb "Moj Kontakt" – SweetAlert2
+  const gumbVizitka = document.getElementById("btnVizitka");
+  if (gumbVizitka) {
+    gumbVizitka.addEventListener("click", (e) => {
+      e.preventDefault();
+      // SweetAlert2 => Swal.fire(...)
+      Swal.fire({
+        title: "Moja Vizitka",
+        text: "Matjaž Novosel\nEmail: matjaz@example.com\nTelefon: +386 40 123 456",
+        icon: "info",
+        confirmButtonText: "Zapri",
+      });
+    });
+  }
 });

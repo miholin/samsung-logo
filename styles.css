@@ -32,26 +32,43 @@ footer+div {
     /* Sivo ozadje */
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Glavni ovoj, ki bo telefon (levo) in navodila (desno) postavil v vrsto */
+.content-with-instructions {
+    display: flex;
+    flex-wrap: wrap; /* omogoča prelomenje na mobilnih napravah */
+    justify-content: center; /* poravna horizontalno v sredino */
+    margin-top: 80px; /* če želite dodaten odmik od vrha */
+    padding: 0 10px;  /* malo notranjega zamika */
 }
+
+.left-content {
+    flex: 0 0 auto; 
+    /* Lahko dodate fiksno širino ali pustite auto. Primer: width: 50%; */
+    margin-right: 20px; /* razmik med levim in desnim delom */
+}
+
+.instructions {
+    flex: 1 1 300px; 
+    /* Zavzame preostanek širine, minimalno 300px, nato se prelomi, če je prostor premajhen */
+    max-width: 600px; /* če želite omejiti širino besedila */
+    color: white;     /* Tekst je bil prej bel */
+    margin-top: 100px; /* da se približno poravna z vrhom telefona */
+}
+
 
 .telefon {
     position: relative;
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;
     padding-top: 100px;
 }
 
 #logoSVG {
     position: absolute;
-    width: 80%;
-    max-width: 120px;
-    top: 55%;
-    left: 50%;
+    width: 90%;
+    max-width: 180px;
+    top: 50%; 
+    left: 49%;
     transform: translate(-50%, -50%);
 }
 
@@ -173,6 +190,7 @@ footer .canvasdiv {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 110px;
 }
 
 #canvas {
@@ -202,6 +220,7 @@ footer img {
 
     #logoSVG {
         width: 70%;
+        left: 55%;
     }
 
     .menu-links {
@@ -237,23 +256,13 @@ footer img {
     footer .canvasdiv {
         margin-left: 50px;
     }
-}
-
-.st0 {
-    fill: white;
-}
-
-.st1,
-.st2,
-.st3,
-.st4 {
-    fill: white;
-    /* začetna barva za druge elemente */
-}
-
-
-@media (max-width: 568px) {
-    #logoSVG {
-        width: 30%;
-    }
+    .content-with-instructions {
+        flex-direction: column; /* da se telefon in navodila zložita en pod drugega na manjših zaslonih */
+        align-items: center;
+      }
+    
+      .instructions {
+        margin-top: 20px; /* manjši odmik */
+        max-width: 100%;  /* naj se raztegne čez celotno širino */
+      }
 }
