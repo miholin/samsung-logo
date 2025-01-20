@@ -7,27 +7,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const colorSliderTelefon = document.getElementById("color-picker-telefon");
   const telefonSVG = document.getElementById("telefon");
 
-  // Vseh g z id="main-body" je lahko več; zberemo vse <path> v njih
-  const mainBodyPaths = telefonSVG
-    ? telefonSVG.querySelectorAll("#main-body path")
-    : [];
+  // Namesto samo phone-body, zgrabimo vse path-e iz #phone-body in #phone-buttons
+  const phoneElements = telefonSVG
+    ? telefonSVG.querySelectorAll("#phone-body, #phone-buttons path")
+    : null;
 
-  // 2. Funkcija za posodobitev barve
-  function updateColor(paths, newColor) {
-    paths.forEach((path) => {
-      path.style.fill = newColor;
-      path.style.fillOpacity = "1"; 
+  // 2. Funkcija za posodobitev barve (dela z nizom elementov ali enim elementom)
+  function updateColor(elements, newColor) {
+    if (!elements) return;
+
+    // Poskrbimo, da je elements vedno array-like za .forEach
+    const list = elements instanceof NodeList || Array.isArray(elements)
+      ? elements
+      : [elements];
+
+    list.forEach((el) => {
+      el.style.fill = newColor;
+      el.style.fillOpacity = "1";
     });
   }
 
   // 3. resetColors() – ob nalaganju
   function resetColors() {
-    // Pobarvamo SAMO main-body v belo
-    if (mainBodyPaths.length > 0) {
-      updateColor(mainBodyPaths, "#ffffff");
-    }
-
-    // Nastavimo logotip na modro (ali vašo barvo)
+    // Telefon pustimo v original barvi (ne barvamo ga z #ffffff)
+    
+    // Logotip: nastavimo privzeto vrednost in ga pobarvamo v modro
     if (colorSlider) {
       colorSlider.value = "#0032A0";
       if (logoPaths.length > 0) {
@@ -35,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Nastavimo privzeto barvo izbirnika telefona
+    // Nastavimo barvo izbirnika telefona (lahko #ffffff ali kakšno drugo)
     if (colorSliderTelefon) {
       colorSliderTelefon.value = "#ffffff";
     }
@@ -60,23 +64,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 6. Dogodki – barvanje SAMO main-body telefona
+  // 6. Dogodki – barvanje ohišja + tipk skupaj
   if (colorSliderTelefon) {
     colorSliderTelefon.addEventListener("input", (event) => {
       const newColor = event.target.value;
-      if (mainBodyPaths.length > 0) {
-        updateColor(mainBodyPaths, newColor);
+      if (phoneElements) {
+        updateColor(phoneElements, newColor);
       }
     });
     colorSliderTelefon.addEventListener("change", (event) => {
       const newColor = event.target.value;
-      if (mainBodyPaths.length > 0) {
-        updateColor(mainBodyPaths, newColor);
+      if (phoneElements) {
+        updateColor(phoneElements, newColor);
       }
     });
   }
 
-  // 7. Burger menu
+  // 7. Burger menu (ostane enako)
   const burgerBtn = document.querySelector(".burger-menu");
   if (burgerBtn) {
     burgerBtn.addEventListener("click", () => {
@@ -88,12 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 8. Gumb "Moj Kontakt" – SweetAlert2
+  // 8. Gumb "Moj Kontakt" – SweetAlert2 (ostane enako)
   const gumbVizitka = document.getElementById("btnVizitka");
   if (gumbVizitka) {
     gumbVizitka.addEventListener("click", (e) => {
       e.preventDefault();
-      // SweetAlert2 => Swal.fire(...)
       Swal.fire({
         title: "Vizitka",
         text: "Miha Sever\nERŠ 4.RB",

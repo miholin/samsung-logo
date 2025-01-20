@@ -59,16 +59,20 @@ footer+div {
 .telefon {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    padding-top: 100px;
+    max-width: 500px; /* namesto 500px */
+    margin-top: -80px;
+    margin-left: -100px;
+    margin-right: 200px;
+    margin-bottom: -125px;
 }
+
 
 #logoSVG {
     position: absolute;
-    width: 90%;
+    width: 80%;
     max-width: 180px;
-    top: 50%; 
-    left: 49%;
+    top: 45%; 
+    left: 62%;
     transform: translate(-50%, -50%);
 }
 
@@ -211,58 +215,72 @@ footer img {
     font-size: 24px;
     padding: 10px 20px;
 }
-
 @media (max-width: 768px) {
+
     .telefon {
-        width: 90%;
-        margin: 0 auto;
+      /* Odstranimo negative margine */
+      margin: 0 auto !important;
+      width: 100%;            /* ali 90%, po želji */
+      max-width: 500px;       /* da ne bo preširoko na mobilnih */
+      /* Če želiš kak dodaten odmik od vrha/spodaj, npr.:
+         margin-top: 20px;
+         margin-bottom: 20px; 
+      */
     }
-
+  
     #logoSVG {
-        width: 70%;
-        left: 55%;
+      /* Če želiš, da logo ostane v sredini telefona */
+      width: 70%;
+      max-width: 180px;
+      left: 62% !important; 
+      top: 45%; 
+      transform: translate(-50%, -50%) !important;
     }
-
+  
     .menu-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        font-family: 'SamsungSans', sans-serif;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      font-family: 'SamsungSans', sans-serif;
     }
-
+  
     .menu-links.active {
-        display: flex;
+      display: flex;
     }
-
+  
     .burger-menu {
-        display: block;
-        float: right;
+      display: block;
+      float: right;
     }
-
+  
     .topnav a {
-        float: left;
-        display: block;
-        padding: 23px 20px;
-        text-decoration: none;
-        color: black;
-        border: none;
+      float: left;
+      display: block;
+      padding: 23px 20px;
+      text-decoration: none;
+      color: black;
+      border: none;
     }
-
+  
     footer .canvasdiv {
-        margin-left: 50px;
+      margin-left: 50px;
     }
+  
+    /* Telefon in navodila se zložita en pod drugega */
     .content-with-instructions {
-        flex-direction: column; /* da se telefon in navodila zložita en pod drugega na manjših zaslonih */
-        align-items: center;
-      }
-    
-      .instructions {
-        margin-top: 20px; /* manjši odmik */
-        max-width: 100%;  /* naj se raztegne čez celotno širino */
-      }
-}
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+    }
+  
+    .instructions {
+      margin-top: 20px;
+      max-width: 100%;
+    }
+  }
+  
