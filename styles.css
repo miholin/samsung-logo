@@ -37,7 +37,7 @@ footer+div {
     display: flex;
     flex-wrap: wrap; /* omogoča prelomenje na mobilnih napravah */
     justify-content: center; /* poravna horizontalno v sredino */
-    margin-top: 80px; /* če želite dodaten odmik od vrha */
+    margin-top: 15vh; /* če želite dodaten odmik od vrha */
     padding: 0 10px;  /* malo notranjega zamika */
 }
 
@@ -52,7 +52,7 @@ footer+div {
     /* Zavzame preostanek širine, minimalno 300px, nato se prelomi, če je prostor premajhen */
     max-width: 600px; /* če želite omejiti širino besedila */
     color: white;     /* Tekst je bil prej bel */
-    margin-top: 100px; /* da se približno poravna z vrhom telefona */
+    margin-top: 5vw; /* da se približno poravna z vrhom telefona */
 }
 
 
@@ -60,7 +60,6 @@ footer+div {
     position: relative;
     width: 100%;
     max-width: 500px; /* namesto 500px */
-    margin-top: -80px;
     margin-left: -100px;
     margin-right: 200px;
     margin-bottom: -125px;
@@ -176,7 +175,7 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
+    margin-top: 17.5vh;
     width: 100%;
     min-height: 50px;
     box-sizing: border-box;
@@ -219,9 +218,10 @@ footer img {
 
     .telefon {
       /* Odstranimo negative margine */
-      margin: 0 auto !important;
+      margin: 0 auto;
       width: 100%;            /* ali 90%, po želji */
-      max-width: 500px;       /* da ne bo preširoko na mobilnih */
+      max-width: 500px;
+      margin-left: -100px;       /* da ne bo preširoko na mobilnih */
       /* Če želiš kak dodaten odmik od vrha/spodaj, npr.:
          margin-top: 20px;
          margin-bottom: 20px; 
@@ -232,7 +232,7 @@ footer img {
       /* Če želiš, da logo ostane v sredini telefona */
       width: 70%;
       max-width: 180px;
-      left: 62% !important; 
+      left: 77% !important; 
       top: 45%; 
       transform: translate(-50%, -50%) !important;
     }
@@ -283,4 +283,3 @@ footer img {
       max-width: 100%;
     }
   }
-  
